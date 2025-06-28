@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Subsidy Eligibility Calculator</title>
+  <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/3/3c/Flag_of_India.svg" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #f0f4f8, #e2e8f0);
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 900px;
+      margin: 30px auto;
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.08);
+    }
+    h1 {
+      text-align: center;
+      color: #2c5282;
+    }
+    .print-btn, .lang-toggle, .voice-btn {
+      display: inline-block;
+      margin: 10px;
+      padding: 10px 20px;
+      background-color: #2c5282;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .result-card {
+      background: #edf2f7;
+      margin: 15px 0;
+      padding: 15px;
+      border-left: 4px solid #2c5282;
+      display: flex;
+      gap: 15px;
+      border-radius: 8px;
+      align-items: flex-start;
+    }
+    .result-card img {
+      width: 50px;
+      height: 50px;
+    }
+    .result-card div {
+      flex: 1;
+    }
+    .result-card strong {
+      color: #2c5282;
+    }
+    @media print {
+      .print-btn, .lang-toggle, .voice-btn { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 id="title">Subsidy Eligibility Calculator</h1>
+    <div style="text-align:center">
+      <button class="lang-toggle" onclick="switchLanguage('en')">English</button>
+      <button class="lang-toggle" onclick="switchLanguage('mr')">मराठी</button>
+      <button class="lang-toggle" onclick="switchLanguage('hi')">हिन्दी</button>
+      <button class="print-btn" onclick="window.print()">🖨️ Print This Page</button>
+      <button class="voice-btn" onclick="startVoiceInput()">🎤 Speak Scheme Name</button>
+    </div>
+    <div id="result"></div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+  <script>
+    const schemes = {
+      en: [
+        { scheme: "PM-Kisan", benefit: "Provides ₹6,000/year in 3 installments to eligible farmers with landholding under 2 hectares." },
+        { scheme: "PMAY-Gramin", benefit: "Provides financial assistance of ₹1.2–1.3 lakh for building pucca houses to rural BPL families." },
+        { scheme: "Ujjwala Yojana", benefit: "Offers free LPG gas connection and initial refill to women from BPL households." },
+        { scheme: "PM Fasal Bima Yojana", benefit: "Covers crop losses due to natural calamities with low premium (2% for Kharif, 1.5% for Rabi)." },
+        { scheme: "Kisan Credit Card", benefit: "Provides short-term credit for crops, livestock, and fisheries with low interest." },
+        { scheme: "Atal Pension Yojana", benefit: "Unorganized workers get ₹1,000–5,000 monthly pension after 60 years of age." },
+        { scheme: "Mahila Kisan Yojana", benefit: "Supports women farmers with training, credit, seeds, and resources." },
+        { scheme: "Baliraja Jal Sanjeevani", benefit: "State irrigation project improving water availability in drought areas." },
+        { scheme: "Savitribai Phule Yojana", benefit: "Scholarships and hostels for SC/ST girls pursuing higher education." },
+        { scheme: "Sheti Sanman", benefit: "Maharashtra state loan waiver for small and marginal farmers." },
+        { scheme: "Majhi Vasundhara", benefit: "Promotes eco-friendly practices with incentives to villages and citizens." }
+      ],
+      mr: [
+        { scheme: "PM-Kisan", benefit: "लहान शेतकऱ्यांना दरवर्षी ₹6,000 तीन हप्त्यांमध्ये मिळतात." },
+        { scheme: "PMAY-Gramin", benefit: "ग्रामिण गरीब कुटुंबांना पक्के घर बांधण्यासाठी ₹1.2–1.3 लाख पर्यंत मदत." },
+        { scheme: "Ujjwala Yojana", benefit: "गरीब महिलांना मोफत एलपीजी गॅस कनेक्शन आणि पहिला सिलेंडर." },
+        { scheme: "PM Fasal Bima Yojana", benefit: "नैसर्गिक आपत्तीने नुकसान झालेल्या पिकांचे विमा संरक्षण." },
+        { scheme: "Kisan Credit Card", benefit: "शेतकऱ्यांना कमी व्याजदरात पीक व पशुपालनासाठी कर्ज." },
+        { scheme: "Atal Pension Yojana", benefit: "60 वर्षांनंतर ₹1,000–₹5,000 मासिक पेन्शन." },
+        { scheme: "Mahila Kisan Yojana", benefit: "महिला शेतकऱ्यांना प्रशिक्षण, कर्ज, बियाणे यासाठी मदत." },
+        { scheme: "Baliraja Jal Sanjeevani", benefit: "कोरडवाहू भागात पाणीपुरवठा सुधारण्यासाठी राज्य सिंचन योजना." },
+        { scheme: "Savitribai Phule Yojana", benefit: "SC/ST मुलींना शिष्यवृत्ती व वसतिगृहाची सुविधा." },
+        { scheme: "Sheti Sanman", benefit: "लहान शेतकऱ्यांसाठी महाराष्ट्रातील कर्जमाफी योजना." },
+        { scheme: "Majhi Vasundhara", benefit: "पर्यावरणपूरक उपक्रमांना ग्रामपंचायती व नागरिकांना प्रोत्साहन." }
+      ],
+      hi: [
+        { scheme: "PM-Kisan", benefit: "छोटे किसानों को सालाना ₹6,000 तीन किस्तों में दिए जाते हैं।" },
+        { scheme: "PMAY-Gramin", benefit: "ग्रामीन गरीबों को पक्का घर बनाने हेतु ₹1.2–1.3 लाख तक की सहायता।" },
+        { scheme: "Ujjwala Yojana", benefit: "गरीब महिलाओं को मुफ्त एलपीजी कनेक्शन और पहला सिलेंडर।" },
+        { scheme: "PM Fasal Bima Yojana", benefit: "प्राकृतिक आपदा से फसल हानि पर बीमा कवर और कम प्रीमियम।" },
+        { scheme: "Kisan Credit Card", benefit: "फसल व पशुपालन के लिए सस्ता और आसान कृषि ऋण।" },
+        { scheme: "Atal Pension Yojana", benefit: "60 वर्ष बाद ₹1,000–₹5,000 तक मासिक पेंशन।" },
+        { scheme: "Mahila Kisan Yojana", benefit: "महिला किसानों को प्रशिक्षण, बीज, ऋण और संसाधन प्रदान करता है।" },
+        { scheme: "Baliraja Jal Sanjeevani", benefit: "राज्य सिंचाई योजना, सूखाग्रस्त क्षेत्रों में जल आपूर्ति सुधारती है।" },
+        { scheme: "Savitribai Phule Yojana", benefit: "SC/ST छात्राओं को छात्रवृत्ति और छात्रावास की सुविधा।" },
+        { scheme: "Sheti Sanman", benefit: "महाराष्ट्र सरकार द्वारा छोटे किसानों के लिए ऋण माफी योजना।" },
+        { scheme: "Majhi Vasundhara", benefit: "पर्यावरण के प्रति जागरूकता और ग्राम पंचायतों को प्रोत्साहन।" }
+      ]
+    };
+
+    const logoMap = {
+      "PM-Kisan": "https://upload.wikimedia.org/wikipedia/commons/7/75/PM-Kisan_Yojana_Logo.png",
+      "PMAY-Gramin": "https://upload.wikimedia.org/wikipedia/commons/d/d1/PMAY_Gramin.png",
+      "Ujjwala Yojana": "https://upload.wikimedia.org/wikipedia/en/7/7b/PM_Ujjwala_Yojana_logo.png",
+      "PM Fasal Bima Yojana": "https://upload.wikimedia.org/wikipedia/en/thumb/2/2f/PMFBY_logo.png/240px-PMFBY_logo.png",
+      "Kisan Credit Card": "https://upload.wikimedia.org/wikipedia/commons/b/b6/Kisan_Credit_Card_logo.png",
+      "Atal Pension Yojana": "https://upload.wikimedia.org/wikipedia/en/f/f6/Atal_Pension_Yojana_logo.png",
+      "Mahila Kisan Yojana": "https://upload.wikimedia.org/wikipedia/commons/3/3f/Women_farmer.png",
+      "Baliraja Jal Sanjeevani": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Water_irrigation_project.png",
+      "Savitribai Phule Yojana": "https://upload.wikimedia.org/wikipedia/commons/e/e7/Savitribai_Phule_portrait.jpg",
+      "Sheti Sanman": "https://upload.wikimedia.org/wikipedia/commons/d/d9/Farmer_loans.png",
+      "Majhi Vasundhara": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Majhi_Vasundhara_logo.png"
+    };
+
+    const linkMap = {
+      "PM-Kisan": "https://pmkisan.gov.in/",
+      "PMAY-Gramin": "https://pmayg.nic.in/",
+      "Ujjwala Yojana": "https://www.pmuy.gov.in/",
+      "PM Fasal Bima Yojana": "https://pmfby.gov.in/",
+      "Kisan Credit Card": "https://www.pmkisan.gov.in/Kisan_Credit_Card.aspx",
+      "Atal Pension Yojana": "https://npscra.nsdl.co.in/scheme-details.php",
+      "Mahila Kisan Yojana": "https://mahila.gov.in/",
+      "Baliraja Jal Sanjeevani": "https://www.maharashtra.gov.in/",
+      "Savitribai Phule Yojana": "https://sjsa.maharashtra.gov.in/",
+      "Sheti Sanman": "https://krishi.maharashtra.gov.in/",
+      "Majhi Vasundhara": "https://majhivasundhara.in/"
+    };
+
+    function switchLanguage(lang) {
+      const list = schemes[lang];
+      document.getElementById("result").innerHTML = "";
+      list.forEach(s => {
+        const logo = logoMap[s.scheme] || "https://upload.wikimedia.org/wikipedia/commons/3/3c/Flag_of_India.svg";
+        const link = linkMap[s.scheme] || "https://www.india.gov.in/";
+        const qrId = `qr-${s.scheme.replace(/\s+/g, '-')}`;
+
+        document.getElementById("result").innerHTML += `
+          <div class="result-card">
+            <img src="${logo}" alt="${s.scheme} Logo">
+            <div>
+              <strong>${s.scheme}</strong><br>
+              ${s.benefit}<br>
+              <a href="${link}" target="_blank">Visit Scheme Website</a><br>
+              <canvas id="${qrId}"></canvas>
+            </div>
+          </div>`;
+
+        setTimeout(() => {
+          new QRious({
+            element: document.getElementById(qrId),
+            value: link,
+            size: 80
+          });
+        }, 0);
+      });
+    }
+
+    function startVoiceInput() {
+      const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+      recognition.lang = 'hi-IN';
+      recognition.onresult = function(event) {
+        const spoken = event.results[0][0].transcript.toLowerCase();
+        const matchedScheme = Object.keys(linkMap).find(key => key.toLowerCase().includes(spoken));
+        if (matchedScheme) {
+          alert(`Redirecting to: ${matchedScheme}`);
+          window.open(linkMap[matchedScheme], '_blank');
+        } else {
+          alert("No matching scheme found for: " + spoken);
+        }
+      };
+      recognition.start();
+    }
+
+    switchLanguage('en');
+  </script>
+</body>
+</html>

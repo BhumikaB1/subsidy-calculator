@@ -1,0 +1,240 @@
+[
+    {
+        "name": {
+            "en": "PM Kisan Samman Nidhi",
+            "hi": "पीएम किसान सम्मान निधि",
+            "mr": "पीएम किसान सन्मान निधी"
+        },
+        "benefits": {
+            "en": "₹6000 per year for small and marginal farmers.",
+            "hi": "छोटे और सीमांत किसानों के लिए प्रति वर्ष ₹6000।",
+            "mr": "लहान आणि सीमांत शेतकऱ्यांसाठी दरवर्षी ₹6000."
+        },
+        "minAge": 18,
+        "maxAge": 70,
+        "maxIncome": 200000,
+        "jobType": "Farmer",
+        "gender": "Any"
+    },
+    {
+        "name": {
+            "en": "Pradhan Mantri Awas Yojana",
+            "hi": "प्रधानमंत्री आवास योजना",
+            "mr": "प्रधानमंत्री आवास योजना"
+        },
+        "benefits": {
+            "en": "Subsidy on home loan interest for eligible families.",
+            "hi": "पात्र परिवारों के लिए होम लोन पर सब्सिडी।",
+            "mr": "पात्र कुटुंबासाठी गृहकर्जावर सबसिडी."
+        },
+        "minAge": 18,
+        "maxAge": 60,
+        "maxIncome": 600000,
+        "jobType": "Any",
+        "gender": "Any"
+    },
+    {
+        "name": {
+            "en": "Atal Pension Yojana",
+            "hi": "अटल पेंशन योजना",
+            "mr": "अटल पेन्शन योजना"
+        },
+        "benefits": {
+            "en": "Pension benefits after 60 years of age.",
+            "hi": "60 वर्ष के बाद पेंशन लाभ।",
+            "mr": "६० वर्षांनंतर पेन्शन लाभ."
+        },
+        "minAge": 18,
+        "maxAge": 40,
+        "maxIncome": 800000,
+        "jobType": "Any",
+        "gender": "Any"
+    },
+    {
+        "name": {
+            "en": "PM Jan Dhan Yojana",
+            "hi": "प्रधानमंत्री जन धन योजना",
+            "mr": "प्रधानमंत्री जन धन योजना"
+        },
+        "benefits": {
+            "en": "Zero balance bank account with insurance.",
+            "hi": "शून्य बैलेंस बैंक अकाउंट और बीमा।",
+            "mr": "शून्य बॅलन्स बँक खाते आणि विमा."
+        },
+        "minAge": 18,
+        "maxAge": 65,
+        "maxIncome": 1000000,
+        "jobType": "Any",
+        "gender": "Any"
+    },
+    {
+        "name": {
+            "en": "Majhi Kanya Bhagyashree Yojana",
+            "hi": "माझी कन्या भाग्यश्री योजना",
+            "mr": "माझी कन्या भाग्यश्री योजना"
+        },
+        "benefits": {
+            "en": "Financial help for girl's education and marriage.",
+            "hi": "लड़कियों की शिक्षा और शादी के लिए आर्थिक सहायता।",
+            "mr": "मुलींच्या शिक्षण व विवाहासाठी आर्थिक मदत."
+        },
+        "minAge": 0,
+        "maxAge": 18,
+        "maxIncome": 750000,
+        "jobType": "Any",
+        "gender": "Female"
+    },
+    {
+        "name": {
+            "en": "Bal Sangopan Yojana",
+            "hi": "बाल संगोपन योजना",
+            "mr": "बाल संगोपन योजना"
+        },
+        "benefits": {
+            "en": "₹425 per month for orphan or single-parent children.",
+            "hi": "अनाथ या एकल माता-पिता के बच्चों के लिए ₹425 प्रति माह।",
+            "mr": "अनाथ किंवा एकल पालक मुलांसाठी दरमहा ₹425."
+        },
+        "minAge": 0,
+        "maxAge": 18,
+        "maxIncome": 500000,
+        "jobType": "Any",
+        "gender": "Any"
+    },
+    {
+        "name": {
+            "en": "Sanjay Gandhi Niradhar Anudan",
+            "hi": "संजय गांधी निराधार अनुदान",
+            "mr": "संजय गांधी निराधार अनुदान योजना"
+        },
+        "benefits": {
+            "en": "₹600-900 monthly financial support for needy.",
+            "hi": "जरूरतमंदों के लिए ₹600-900 मासिक अनुदान।",
+            "mr": "गरजूंसाठी दरमहा ₹600-900 आर्थिक सहाय्य."
+        },
+        "minAge": 18,
+        "maxAge": 65,
+        "maxIncome": 60000,
+        "jobType": "Unemployed",
+        "gender": "Any"
+    },
+    {
+        "name": {
+            "en": "Shravan Bal Seva Rajya Nivrutti Yojana",
+            "hi": "श्रावण बाळ सेवा राज्य निवृत्ती योजना",
+            "mr": "श्रावण बाळ सेवा राज्य निवृत्ती योजना"
+        },
+        "benefits": {
+            "en": "Monthly pension for senior citizens.",
+            "hi": "वरिष्ठ नागरिकों के लिए मासिक पेंशन।",
+            "mr": "ज्येष्ठ नागरिकांसाठी दरमहा पेन्शन."
+        },
+        "minAge": 65,
+        "maxAge": 99,
+        "maxIncome": 21000,
+        "jobType": "Any",
+        "gender": "Any"
+    },
+    {
+        "name": {
+            "en": "PM Mudra Yojana",
+            "hi": "प्रधानमंत्री मुद्रा योजना",
+            "mr": "प्रधानमंत्री मुद्रा योजना"
+        },
+        "benefits": {
+            "en": "Loans up to ₹10 lakh for small businesses.",
+            "hi": "छोटे व्यवसायों के लिए ₹10 लाख तक लोन।",
+            "mr": "लहान व्यवसायासाठी ₹10 लाख पर्यंत कर्ज."
+        },
+        "minAge": 18,
+        "maxAge": 60,
+        "maxIncome": 1500000,
+        "jobType": "Self-employed",
+        "gender": "Any"
+    },
+    {
+        "name": {
+            "en": "Ujjwala Yojana",
+            "hi": "उज्ज्वला योजना",
+            "mr": "उज्ज्वला योजना"
+        },
+        "benefits": {
+            "en": "Free LPG connection for BPL women.",
+            "hi": "बीपीएल महिलाओं के लिए फ्री एलपीजी कनेक्शन।",
+            "mr": "बीपीएल महिलांसाठी मोफत एलपीजी कनेक्शन."
+        },
+        "minAge": 18,
+        "maxAge": 65,
+        "maxIncome": 50000,
+        "jobType": "Any",
+        "gender": "Female"
+    },
+    {
+        "name": {
+            "en": "Savitribai Phule Scholarship",
+            "hi": "सावित्रीबाई फुले छात्रवृत्ति",
+            "mr": "सावित्रीबाई फुले शिष्यवृत्ती"
+        },
+        "benefits": {
+            "en": "Financial aid for girls' education (SC/ST/BPL).",
+            "hi": "एससी/एसटी/बीपीएल लड़कियों की शिक्षा के लिए सहायता।",
+            "mr": "एससी/एसटी/बीपीएल मुलींसाठी शिक्षण सहाय्य."
+        },
+        "minAge": 6,
+        "maxAge": 18,
+        "maxIncome": 200000,
+        "jobType": "Any",
+        "gender": "Female"
+    },
+    {
+        "name": {
+            "en": "Kisan Credit Card",
+            "hi": "किसान क्रेडिट कार्ड",
+            "mr": "शेतकरी क्रेडिट कार्ड"
+        },
+        "benefits": {
+            "en": "Low-interest credit for farmers.",
+            "hi": "किसानों के लिए कम ब्याज दर पर ऋण।",
+            "mr": "शेतकऱ्यांसाठी कमी व्याजदराने कर्ज."
+        },
+        "minAge": 18,
+        "maxAge": 65,
+        "maxIncome": 500000,
+        "jobType": "Farmer",
+        "gender": "Any"
+    },
+    {
+        "name": {
+            "en": "Mahatma Jyotiba Phule Jan Arogya Yojana",
+            "hi": "महात्मा ज्योतिबा फुले जन आरोग्य योजना",
+            "mr": "महात्मा ज्योतिबा फुले जन आरोग्य योजना"
+        },
+        "benefits": {
+            "en": "Free medical treatment for poor families.",
+            "hi": "गरीब परिवारों के लिए मुफ्त इलाज।",
+            "mr": "गरिब कुटुंबांसाठी मोफत उपचार."
+        },
+        "minAge": 0,
+        "maxAge": 100,
+        "maxIncome": 100000,
+        "jobType": "Any",
+        "gender": "Any"
+    },
+    {
+        "name": {
+            "en": "Pradhan Mantri Fasal Bima Yojana",
+            "hi": "प्रधानमंत्री फसल बीमा योजना",
+            "mr": "प्रधानमंत्री पिक विमा योजना"
+        },
+        "benefits": {
+            "en": "Crop insurance for farmers against loss.",
+            "hi": "फसलों के नुकसान के लिए बीमा।",
+            "mr": "शेतकऱ्यांसाठी पिक नुकसानीसाठी विमा."
+        },
+        "minAge": 18,
+        "maxAge": 65,
+        "maxIncome": 200000,
+        "jobType": "Farmer",
+        "gender": "Any"
+    }
+]

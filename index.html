@@ -1,17 +1,53 @@
-
-<!-- THIS IS WHERE THE COMPLETE HTML CONTENT WILL GO -->
-<!-- Final version includes 35 schemes, multilingual UI, TTS, CSS styling -->
-<!-- For the sake of this example, we're inserting a simplified placeholder -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Subsidy Calculator</title>
+    <meta charset="UTF-8">
+    <title>Government Subsidy Eligibility Calculator</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1>Subsidy Eligibility Calculator</h1>
-  <p>This is your fully working calculator with all 35 schemes included.</p>
-  <p>Multilingual, TTS, and eligibility logic are all integrated.</p>
+
+    <h1>Government Subsidy Eligibility Calculator</h1>
+
+    <label>Age:</label>
+    <input type="number" id="age" required>
+
+    <label>Income (₹ per year):</label>
+    <input type="number" id="income" required>
+
+    <label>Landholding (acres):</label>
+    <input type="number" id="land" required>
+
+    <label>Job Type:</label>
+    <select id="job" required>
+        <option value="">Select</option>
+        <option value="Farmer">Farmer</option>
+        <option value="Laborer">Laborer</option>
+        <option value="Unemployed">Unemployed</option>
+        <option value="Self-employed">Self-employed</option>
+    </select>
+
+    <label>Gender:</label>
+    <select id="gender" required>
+        <option value="">Select</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+        <option value="Other">Other</option>
+    </select>
+
+    <label>Select Language for Scheme Details:</label>
+    <select id="outputLang">
+        <option value="en">English</option>
+        <option value="hi">Hindi</option>
+        <option value="mr">Marathi</option>
+    </select>
+
+    <button type="submit" id="checkEligibilityBtn">Check Eligibility</button>
+
+    <div id="results"></div>
+
+    <script src="script.js"></script>
+
 </body>
 </html>
+

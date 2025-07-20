@@ -1,53 +1,196 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>Government Subsidy Eligibility Calculator</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Subsidy Eligibility Calculator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f1f5f9;
+            color: #333;
+        }
+
+        header {
+            background-color: #1d3557;
+            color: #fff;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 1.8rem;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 1rem;
+        }
+
+        .form-section {
+            background-color: #fff;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .form-section h2 {
+            margin-top: 0;
+            color: #1d3557;
+        }
+
+        .form-section label {
+            display: block;
+            margin-top: 0.8rem;
+        }
+
+        .form-section input,
+        .form-section select {
+            width: 100%;
+            padding: 0.5rem;
+            margin-top: 0.2rem;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+
+        .btn {
+            margin-top: 1rem;
+            padding: 0.7rem 2rem;
+            background-color: #457b9d;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .btn:hover {
+            background-color: #1d3557;
+        }
+
+        .results {
+            margin-top: 2rem;
+        }
+
+        .scheme-card {
+            background-color: #fff;
+            border-radius: 12px;
+            padding: 1.2rem;
+            margin: 1rem 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            transition: 0.3s;
+        }
+
+        .scheme-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .scheme-card h3 {
+            color: #1d3557;
+        }
+
+        .scheme-card p {
+            margin: 0.4rem 0;
+            font-size: 0.95rem;
+            color: #444;
+        }
+
+        .scheme-link {
+            display: inline-block;
+            margin-top: 0.5rem;
+            color: #1d3557;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .scheme-link:hover {
+            text-decoration: underline;
+        }
+
+        .icons {
+            font-size: 2rem;
+            color: #457b9d;
+            margin-right: 0.5rem;
+            vertical-align: middle;
+        }
+
+        .scheme-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: #1d3557;
+            color: #fff;
+            margin-top: 2rem;
+        }
+    </style>
 </head>
+
 <body>
+    <header>
+        <h1><i class="fa-solid fa-seedling"></i> Subsidy Eligibility Calculator</h1>
+    </header>
 
-    <h1>Government Subsidy Eligibility Calculator</h1>
+    <div class="container">
+        <div class="form-section">
+            <h2><i class="fa-solid fa-filter icons"></i> Check Your Eligibility</h2>
 
-    <label>Age:</label>
-    <input type="number" id="age" required>
+            <label for="age">Age</label>
+            <input type="number" id="age" placeholder="Enter your age">
 
-    <label>Income (₹ per year):</label>
-    <input type="number" id="income" required>
+            <label for="income">Annual Income (INR)</label>
+            <input type="number" id="income" placeholder="Enter your annual income">
 
-    <label>Landholding (acres):</label>
-    <input type="number" id="land" required>
+            <label for="land">Land Holding (Acres)</label>
+            <input type="number" id="land" placeholder="Enter landholding (if none, write 0)">
 
-    <label>Job Type:</label>
-    <select id="job" required>
-        <option value="">Select</option>
-        <option value="Farmer">Farmer</option>
-        <option value="Laborer">Laborer</option>
-        <option value="Unemployed">Unemployed</option>
-        <option value="Self-employed">Self-employed</option>
-    </select>
+            <label for="job">Occupation</label>
+            <select id="job">
+                <option value="Any">Any</option>
+                <option value="Farmer">Farmer</option>
+                <option value="Self-employed">Self-employed</option>
+                <option value="Unemployed">Unemployed</option>
+            </select>
 
-    <label>Gender:</label>
-    <select id="gender" required>
-        <option value="">Select</option>
-        <option value="Male">Male</option>
-        <option value="Female">Female</option>
-        <option value="Other">Other</option>
-    </select>
+            <label for="gender">Gender</label>
+            <select id="gender">
+                <option value="Any">Any</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
 
-    <label>Select Language for Scheme Details:</label>
-    <select id="outputLang">
-        <option value="en">English</option>
-        <option value="hi">Hindi</option>
-        <option value="mr">Marathi</option>
-    </select>
+            <label for="language">Display Language</label>
+            <select id="language">
+                <option value="en">English</option>
+                <option value="hi">Hindi</option>
+                <option value="mr">Marathi</option>
+            </select>
 
-    <button type="submit" id="checkEligibilityBtn">Check Eligibility</button>
+            <button class="btn" id="checkBtn"><i class="fa-solid fa-magnifying-glass"></i> Check Schemes</button>
+        </div>
 
-    <div id="results"></div>
+        <div class="results" id="results"></div>
+        <button class="btn" onclick="printResults()"><i class="fa-solid fa-print"></i> Print / Download PDF</button>
+
+    </div>
+
+    <footer>
+        <p>© 2025 Rural Welfare | Designed for Easy Access</p>
+    </footer>
 
     <script src="script.js"></script>
-
 </body>
+
 </html>
+
 

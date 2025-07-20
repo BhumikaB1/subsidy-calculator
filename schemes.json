@@ -10,6 +10,8 @@
             "hi": "छोटे और सीमांत किसानों के लिए प्रति वर्ष ₹6000।",
             "mr": "लहान आणि सीमांत शेतकऱ्यांसाठी दरवर्षी ₹6000."
         },
+        "link": "https://pmkisan.gov.in/",
+        "contact": "155261",
         "minAge": 18,
         "maxAge": 70,
         "maxIncome": 200000,
@@ -18,15 +20,17 @@
     },
     {
         "name": {
-            "en": "Pradhan Mantri Awas Yojana",
-            "hi": "प्रधानमंत्री आवास योजना",
-            "mr": "प्रधानमंत्री आवास योजना"
+            "en": "Pradhan Mantri Awas Yojana (Urban)",
+            "hi": "प्रधानमंत्री आवास योजना (शहरी)",
+            "mr": "प्रधानमंत्री आवास योजना (शहरी)"
         },
         "benefits": {
             "en": "Subsidy on home loan interest for eligible families.",
             "hi": "पात्र परिवारों के लिए होम लोन पर सब्सिडी।",
             "mr": "पात्र कुटुंबासाठी गृहकर्जावर सबसिडी."
         },
+        "link": "https://pmaymis.gov.in/",
+        "contact": "1800116446",
         "minAge": 18,
         "maxAge": 60,
         "maxIncome": 600000,
@@ -44,6 +48,8 @@
             "hi": "60 वर्ष के बाद पेंशन लाभ।",
             "mr": "६० वर्षांनंतर पेन्शन लाभ."
         },
+        "link": "https://npscra.nsdl.co.in/scheme-details.php",
+        "contact": "1800110001",
         "minAge": 18,
         "maxAge": 40,
         "maxIncome": 800000,
@@ -61,6 +67,8 @@
             "hi": "शून्य बैलेंस बैंक अकाउंट और बीमा।",
             "mr": "शून्य बॅलन्स बँक खाते आणि विमा."
         },
+        "link": "https://pmjdy.gov.in/",
+        "contact": "1800110001",
         "minAge": 18,
         "maxAge": 65,
         "maxIncome": 1000000,
@@ -78,11 +86,70 @@
             "hi": "लड़कियों की शिक्षा और शादी के लिए आर्थिक सहायता।",
             "mr": "मुलींच्या शिक्षण व विवाहासाठी आर्थिक मदत."
         },
+        "link": "https://mahadbt.maharashtra.gov.in/",
+        "contact": "02249150800",
         "minAge": 0,
         "maxAge": 18,
         "maxIncome": 750000,
         "jobType": "Any",
         "gender": "Female"
+    },
+    {
+        "name": {
+            "en": "Ladki Bahin Yojana",
+            "hi": "लाडकी बहन योजना",
+            "mr": "लाडकी बहिण योजना"
+        },
+        "benefits": {
+            "en": "₹1500 per month for eligible women.",
+            "hi": "पात्र महिलाओं के लिए ₹1500 प्रति माह।",
+            "mr": "पात्र महिलांसाठी दरमहा ₹1500."
+        },
+        "link": "https://sjsa.maharashtra.gov.in/",
+        "contact": "18001028138",
+        "minAge": 18,
+        "maxAge": 60,
+        "maxIncome": 200000,
+        "jobType": "Any",
+        "gender": "Female"
+    },
+    {
+        "name": {
+            "en": "Ujjwala Yojana",
+            "hi": "उज्ज्वला योजना",
+            "mr": "उज्ज्वला योजना"
+        },
+        "benefits": {
+            "en": "Free LPG connection for BPL women.",
+            "hi": "बीपीएल महिलाओं के लिए फ्री एलपीजी कनेक्शन।",
+            "mr": "बीपीएल महिलांसाठी मोफत एलपीजी कनेक्शन."
+        },
+        "link": "https://pmuy.gov.in/",
+        "contact": "18002333555",
+        "minAge": 18,
+        "maxAge": 65,
+        "maxIncome": 50000,
+        "jobType": "Any",
+        "gender": "Female"
+    },
+    {
+        "name": {
+            "en": "PM Mudra Yojana",
+            "hi": "प्रधानमंत्री मुद्रा योजना",
+            "mr": "प्रधानमंत्री मुद्रा योजना"
+        },
+        "benefits": {
+            "en": "Loans up to ₹10 lakh for small businesses.",
+            "hi": "छोटे व्यवसायों के लिए ₹10 लाख तक लोन।",
+            "mr": "लहान व्यवसायासाठी ₹10 लाख पर्यंत कर्ज."
+        },
+        "link": "https://www.mudra.org.in/",
+        "contact": "18001801111",
+        "minAge": 18,
+        "maxAge": 60,
+        "maxIncome": 1500000,
+        "jobType": "Self-employed",
+        "gender": "Any"
     },
     {
         "name": {
@@ -95,6 +162,8 @@
             "hi": "अनाथ या एकल माता-पिता के बच्चों के लिए ₹425 प्रति माह।",
             "mr": "अनाथ किंवा एकल पालक मुलांसाठी दरमहा ₹425."
         },
+        "link": "https://sjsa.maharashtra.gov.in/",
+        "contact": "18001028138",
         "minAge": 0,
         "maxAge": 18,
         "maxIncome": 500000,
@@ -112,6 +181,8 @@
             "hi": "जरूरतमंदों के लिए ₹600-900 मासिक अनुदान।",
             "mr": "गरजूंसाठी दरमहा ₹600-900 आर्थिक सहाय्य."
         },
+        "link": "https://sjsa.maharashtra.gov.in/",
+        "contact": "18001028138",
         "minAge": 18,
         "maxAge": 65,
         "maxIncome": 60000,
@@ -120,15 +191,17 @@
     },
     {
         "name": {
-            "en": "Shravan Bal Seva Rajya Nivrutti Yojana",
-            "hi": "श्रावण बाळ सेवा राज्य निवृत्ती योजना",
-            "mr": "श्रावण बाळ सेवा राज्य निवृत्ती योजना"
+            "en": "Shravan Bal Seva Yojana",
+            "hi": "श्रावण बाळ सेवा योजना",
+            "mr": "श्रावण बाळ सेवा योजना"
         },
         "benefits": {
             "en": "Monthly pension for senior citizens.",
             "hi": "वरिष्ठ नागरिकों के लिए मासिक पेंशन।",
             "mr": "ज्येष्ठ नागरिकांसाठी दरमहा पेन्शन."
         },
+        "link": "https://sjsa.maharashtra.gov.in/",
+        "contact": "18001028138",
         "minAge": 65,
         "maxAge": 99,
         "maxIncome": 21000,
@@ -137,37 +210,22 @@
     },
     {
         "name": {
-            "en": "PM Mudra Yojana",
-            "hi": "प्रधानमंत्री मुद्रा योजना",
-            "mr": "प्रधानमंत्री मुद्रा योजना"
+            "en": "Mahatma Jyotiba Phule Jan Arogya Yojana",
+            "hi": "महात्मा ज्योतिबा फुले जन आरोग्य योजना",
+            "mr": "महात्मा ज्योतिबा फुले जन आरोग्य योजना"
         },
         "benefits": {
-            "en": "Loans up to ₹10 lakh for small businesses.",
-            "hi": "छोटे व्यवसायों के लिए ₹10 लाख तक लोन।",
-            "mr": "लहान व्यवसायासाठी ₹10 लाख पर्यंत कर्ज."
+            "en": "Free medical treatment for poor families.",
+            "hi": "गरीब परिवारों के लिए मुफ्त इलाज।",
+            "mr": "गरिब कुटुंबांसाठी मोफत उपचार."
         },
-        "minAge": 18,
-        "maxAge": 60,
-        "maxIncome": 1500000,
-        "jobType": "Self-employed",
-        "gender": "Any"
-    },
-    {
-        "name": {
-            "en": "Ujjwala Yojana",
-            "hi": "उज्ज्वला योजना",
-            "mr": "उज्ज्वला योजना"
-        },
-        "benefits": {
-            "en": "Free LPG connection for BPL women.",
-            "hi": "बीपीएल महिलाओं के लिए फ्री एलपीजी कनेक्शन।",
-            "mr": "बीपीएल महिलांसाठी मोफत एलपीजी कनेक्शन."
-        },
-        "minAge": 18,
-        "maxAge": 65,
-        "maxIncome": 50000,
+        "link": "https://mjpad.gov.in/",
+        "contact": "155388",
+        "minAge": 0,
+        "maxAge": 100,
+        "maxIncome": 100000,
         "jobType": "Any",
-        "gender": "Female"
+        "gender": "Any"
     },
     {
         "name": {
@@ -180,6 +238,8 @@
             "hi": "एससी/एसटी/बीपीएल लड़कियों की शिक्षा के लिए सहायता।",
             "mr": "एससी/एसटी/बीपीएल मुलींसाठी शिक्षण सहाय्य."
         },
+        "link": "https://mahadbt.maharashtra.gov.in/",
+        "contact": "02249150800",
         "minAge": 6,
         "maxAge": 18,
         "maxIncome": 200000,
@@ -197,6 +257,8 @@
             "hi": "किसानों के लिए कम ब्याज दर पर ऋण।",
             "mr": "शेतकऱ्यांसाठी कमी व्याजदराने कर्ज."
         },
+        "link": "https://vikaspedia.in/agriculture/policies-and-schemes/kisan-credit-card-scheme",
+        "contact": "1800115526",
         "minAge": 18,
         "maxAge": 65,
         "maxIncome": 500000,
@@ -205,24 +267,7 @@
     },
     {
         "name": {
-            "en": "Mahatma Jyotiba Phule Jan Arogya Yojana",
-            "hi": "महात्मा ज्योतिबा फुले जन आरोग्य योजना",
-            "mr": "महात्मा ज्योतिबा फुले जन आरोग्य योजना"
-        },
-        "benefits": {
-            "en": "Free medical treatment for poor families.",
-            "hi": "गरीब परिवारों के लिए मुफ्त इलाज।",
-            "mr": "गरिब कुटुंबांसाठी मोफत उपचार."
-        },
-        "minAge": 0,
-        "maxAge": 100,
-        "maxIncome": 100000,
-        "jobType": "Any",
-        "gender": "Any"
-    },
-    {
-        "name": {
-            "en": "Pradhan Mantri Fasal Bima Yojana",
+            "en": "PM Fasal Bima Yojana",
             "hi": "प्रधानमंत्री फसल बीमा योजना",
             "mr": "प्रधानमंत्री पिक विमा योजना"
         },
@@ -231,10 +276,70 @@
             "hi": "फसलों के नुकसान के लिए बीमा।",
             "mr": "शेतकऱ्यांसाठी पिक नुकसानीसाठी विमा."
         },
+        "link": "https://pmfby.gov.in/",
+        "contact": "1800116515",
         "minAge": 18,
         "maxAge": 65,
         "maxIncome": 200000,
         "jobType": "Farmer",
         "gender": "Any"
+    },
+    {
+        "name": {
+            "en": "Ayushman Bharat Yojana",
+            "hi": "आयुष्मान भारत योजना",
+            "mr": "आयुष्मान भारत योजना"
+        },
+        "benefits": {
+            "en": "₹5 lakh health insurance per family per year.",
+            "hi": "₹5 लाख का सालाना स्वास्थ्य बीमा।",
+            "mr": "प्रत्येक कुटुंबासाठी दरवर्षी ₹5 लाख आरोग्य विमा."
+        },
+        "link": "https://pmjay.gov.in/",
+        "contact": "14555",
+        "minAge": 18,
+        "maxAge": 70,
+        "maxIncome": 500000,
+        "jobType": "Any",
+        "gender": "Any"
+    },
+    {
+        "name": {
+            "en": "Balika Samridhi Yojana",
+            "hi": "बालिका समृद्धि योजना",
+            "mr": "बालिका समृद्धी योजना"
+        },
+        "benefits": {
+            "en": "Financial support for girl child's education.",
+            "hi": "लड़कियों की शिक्षा के लिए आर्थिक सहायता।",
+            "mr": "मुलींच्या शिक्षणासाठी आर्थिक सहाय्य."
+        },
+        "link": "https://wcd.nic.in/",
+        "contact": "1800112121",
+        "minAge": 0,
+        "maxAge": 18,
+        "maxIncome": 200000,
+        "jobType": "Any",
+        "gender": "Female"
+    },
+    {
+        "name": {
+            "en": "Annapurna Scheme",
+            "hi": "अन्नपूर्णा योजना",
+            "mr": "अन्नपूर्णा योजना"
+        },
+        "benefits": {
+            "en": "Free 10 kg food grains for senior citizens.",
+            "hi": "वरिष्ठ नागरिकों को 10 किलो मुफ्त अनाज।",
+            "mr": "ज्येष्ठ नागरिकांना दरमहा 10 किलो मोफत धान्य."
+        },
+        "link": "https://sjsa.maharashtra.gov.in/",
+        "contact": "18001028138",
+        "minAge": 65,
+        "maxAge": 99,
+        "maxIncome": 20000,
+        "jobType": "Any",
+        "gender": "Any"
     }
 ]
+

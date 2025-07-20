@@ -1,48 +1,86 @@
-let schemes = [];
-
-// Load schemes.json
-fetch('schemes.json')
-    .then(response => response.json())
-    .then(data => {
-        schemes = data;
-    })
-    .catch(error => console.error('Error loading schemes:', error));
-
-// Main Eligibility Check
-document.getElementById("checkEligibilityBtn").addEventListener("click", function (e) {
-    e.preventDefault();
-
-    const age = parseInt(document.getElementById("age").value);
-    const income = parseInt(document.getElementById("income").value);
-    const land = parseFloat(document.getElementById("land").value);
-    const job = document.getElementById("job").value;
-    const gender = document.getElementById("gender").value;
-    const outputLang = document.getElementById("outputLang").value;
-
-    const eligibleSchemes = schemes.filter(scheme => {
-        const ageMatch = age >= scheme.minAge && age <= scheme.maxAge;
-        const incomeMatch = income <= scheme.maxIncome;
-        const jobMatch = scheme.jobType === "Any" || scheme.jobType === job;
-        const genderMatch = scheme.gender === "Any" || scheme.gender === gender;
-
-        return ageMatch && incomeMatch && jobMatch && genderMatch;
-    });
-
-    displayResults(eligibleSchemes, outputLang);
-});
-
-// Display Results
-function displayResults(schemes, lang) {
-    const resultsDiv = document.getElementById("results");
-
-    if (schemes.length === 0) {
-        resultsDiv.innerHTML = "<p>No matching schemes found.</p>";
-    } else {
-        resultsDiv.innerHTML = "<h3>Eligible Schemes:</h3><ul>" +
-            schemes.map(s => 
-                `<li><strong>${s.name[lang]}</strong><br>Benefits: ${s.benefits[lang]}</li>`
-            ).join('') + "</ul>";
-    }
+// Sample function to fetch and filter schemes
+async function fetchSchemes() {
+    const response = await fetch('schemes.json');
+    const schemes = await response.json();
+    return schemes;
 }
+
+function getSelectedLanguage() {
+    return document.getElementById('language').value;
+}
+
+function getUserInput() {
+    return {
+        age: parseInt(document.getElementById('age').value),
+        income: parseInt(document.getElementById('income').value),
+        landholding: parseFloat(document.getElementById('land').value),
+        jobType: document.getElementById('job').value,
+        gender: document.getElementById('gender').value
+    };
+}
+
+function isEligible(scheme, userInput) {
+    return (
+        userInput.age >= scheme.minAge &&
+        userInput.age <= scheme.maxAge &&
+        userInput.income <= scheme.maxIncome &&
+        (scheme.jobType === "Any" || scheme.jobType === userInput.jobType) &&
+        (scheme.gender === "Any" || scheme.gender === userInput.gender)
+    );
+}
+
+function createCard(scheme, language) {
+    const card = document.createElement('div');
+    card.className = 'scheme-card';
+
+    const title = document.createElement('h3');
+    title.textContent = scheme.name[language];
+
+    const benefit = document.createElement('p');
+    benefit.textContent = scheme.benefits[language];
+
+    const link = document.createElement('a');
+    link.href = scheme.link;
+    link.target = "_blank";
+    link.textContent = "Visit Scheme Website";
+    link.className = 'scheme-link';
+
+    const contact = document.createElement('p');
+    contact.innerHTML = `Contact: <a href="tel:${scheme.contact}">${scheme.contact}</a>`;
+
+    card.appendChild(title);
+    card.appendChild(benefit);
+    card.appendChild(link);
+    card.appendChild(contact);
+
+    return card;
+}
+
+function displayResults(filteredSchemes, language) {
+    const resultsContainer = document.getElementById('results');
+    resultsContainer.innerHTML = '';
+
+    if (filteredSchemes.length === 0) {
+        resultsContainer.innerHTML = '<p>No matching schemes found.</p>';
+        return;
+    }
+
+    filteredSchemes.forEach(scheme => {
+        const card = createCard(scheme, language);
+        resultsContainer.appendChild(card);
+    });
+}
+
+async function checkEligibility() {
+    const schemes = await fetchSchemes();
+    const userInput = getUserInput();
+    const language = getSelectedLanguage();
+
+    const eligibleSchemes = schemes.filter(scheme => isEligible(scheme, userInput));
+    displayResults(eligibleSchemes, language);
+}
+
+// Event Listener
+document.getElementById('checkBtn').addEventListener('click', checkEligibility);
 
     

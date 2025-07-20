@@ -98,6 +98,37 @@ button:hover {
         font-size: 1.5rem;
     }
 }
+.scheme-card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 1rem;
+    margin: 1rem 0;
+    background: #f9f9f9;
+    box-shadow: 0 0 8px rgba(0,0,0,0.05);
+}
+
+.scheme-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    color: #340e62;
+}
+
+.scheme-card p {
+    margin: 0.3rem 0;
+    font-size: 0.95rem;
+    color: #0c5761;
+}
+
+.scheme-link {
+    display: inline-block;
+    margin-top: 0.5rem;
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.scheme-link:hover {
+    text-decoration: underline;
+}
 
 
 

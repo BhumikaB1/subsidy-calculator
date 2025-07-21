@@ -10,7 +10,7 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f1f5f9;
+            background-color: #f5f5f5;
             color: #333;
         }
 
@@ -52,7 +52,7 @@
         .form-section input,
         .form-section select {
             width: 100%;
-            padding: 0.5rem;
+            padding: 0.6rem;
             margin-top: 0.2rem;
             border: 1px solid #ccc;
             border-radius: 6px;
@@ -60,7 +60,7 @@
 
         .btn {
             margin-top: 1rem;
-            padding: 0.7rem 2rem;
+            padding: 0.8rem 2rem;
             background-color: #457b9d;
             color: #fff;
             border: none;
@@ -78,25 +78,27 @@
         }
 
         .scheme-card {
-            background-color: #fff;
+            background-color: #ffffff;
             border-radius: 12px;
-            padding: 1.2rem;
+            padding: 1.4rem;
             margin: 1rem 0;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
             transition: 0.3s;
+            border-left: 6px solid #1d3557;
         }
 
         .scheme-card:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
         }
 
         .scheme-card h3 {
             color: #1d3557;
+            margin-bottom: 0.3rem;
         }
 
         .scheme-card p {
-            margin: 0.4rem 0;
+            margin: 0.5rem 0;
             font-size: 0.95rem;
             color: #444;
         }
@@ -107,6 +109,7 @@
             color: #1d3557;
             text-decoration: none;
             font-weight: bold;
+            padding: 0.4rem 0;
         }
 
         .scheme-link:hover {
@@ -114,16 +117,10 @@
         }
 
         .icons {
-            font-size: 2rem;
-            color: #457b9d;
+            font-size: 1.4rem;
+            color: #1d3557;
             margin-right: 0.5rem;
             vertical-align: middle;
-        }
-
-        .scheme-header {
-            display: flex;
-            align-items: center;
-            gap: 10px;
         }
 
         footer {
@@ -177,11 +174,10 @@
             </select>
 
             <button class="btn" id="checkBtn"><i class="fa-solid fa-magnifying-glass"></i> Check Schemes</button>
+            <button class="btn" onclick="printResults()"><i class="fa-solid fa-print"></i> Print / Download PDF</button>
         </div>
 
         <div class="results" id="results"></div>
-        <button class="btn" onclick="printResults()"><i class="fa-solid fa-print"></i> Print / Download PDF</button>
-
     </div>
 
     <footer>

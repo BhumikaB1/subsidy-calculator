@@ -1,4 +1,4 @@
-// Sample function to fetch and filter schemes
+
 async function fetchSchemes() {
     const response = await fetch('schemes.json');
     const schemes = await response.json();

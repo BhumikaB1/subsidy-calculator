@@ -1,14 +1,16 @@
-
+// Fetch schemes from JSON
 async function fetchSchemes() {
     const response = await fetch('schemes.json');
     const schemes = await response.json();
     return schemes;
 }
 
+// Get selected language
 function getSelectedLanguage() {
     return document.getElementById('language').value;
 }
 
+// Get user input
 function getUserInput() {
     return {
         age: parseInt(document.getElementById('age').value),
@@ -19,6 +21,7 @@ function getUserInput() {
     };
 }
 
+// Check eligibility
 function isEligible(scheme, userInput) {
     return (
         userInput.age >= scheme.minAge &&
@@ -29,6 +32,7 @@ function isEligible(scheme, userInput) {
     );
 }
 
+// Create scheme card
 function createCard(scheme, language) {
     const card = document.createElement('div');
     card.className = 'scheme-card';
@@ -56,21 +60,29 @@ function createCard(scheme, language) {
     return card;
 }
 
+// Display results in #results and also copy to #printSection
 function displayResults(filteredSchemes, language) {
     const resultsContainer = document.getElementById('results');
+    const printContainer = document.getElementById('printSection');
+
     resultsContainer.innerHTML = '';
+    printContainer.innerHTML = '';
 
     if (filteredSchemes.length === 0) {
         resultsContainer.innerHTML = '<p>No matching schemes found.</p>';
+        printContainer.innerHTML = '<p>No matching schemes found.</p>';
         return;
     }
 
     filteredSchemes.forEach(scheme => {
         const card = createCard(scheme, language);
+        const printCard = card.cloneNode(true); // clone for print section
         resultsContainer.appendChild(card);
+        printContainer.appendChild(printCard);
     });
 }
 
+// Check eligibility and display
 async function checkEligibility() {
     const schemes = await fetchSchemes();
     const userInput = getUserInput();
@@ -80,8 +92,7 @@ async function checkEligibility() {
     displayResults(eligibleSchemes, language);
 }
 
-// Event Listener
-document.getElementById('checkBtn').addEventListener('click', checkEligibility);
+// Print results from #printSection
 function printResults() {
     const printContents = document.getElementById('printSection').innerHTML;
     const originalContents = document.body.innerHTML;
@@ -90,8 +101,11 @@ function printResults() {
     window.print();
     document.body.innerHTML = originalContents;
 
-    // Optional: reload to restore event listeners and full layout
+    // Restore JS functionality
     location.reload();
 }
 
-    
+// Event listeners
+document.getElementById('checkBtn').addEventListener('click', checkEligibility);
+document.getElementById('printBtn').addEventListener('click', printResults);
+

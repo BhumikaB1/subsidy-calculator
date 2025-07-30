@@ -82,5 +82,16 @@ async function checkEligibility() {
 
 // Event Listener
 document.getElementById('checkBtn').addEventListener('click', checkEligibility);
+function printResults() {
+    const printContents = document.getElementById('printSection').innerHTML;
+    const originalContents = document.body.innerHTML;
+
+    document.body.innerHTML = printContents;
+    window.print();
+    document.body.innerHTML = originalContents;
+
+    // Optional: reload to restore event listeners and full layout
+    location.reload();
+}
 
     

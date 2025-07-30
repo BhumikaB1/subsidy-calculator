@@ -130,7 +130,25 @@
             color: #fff;
             margin-top: 2rem;
         }
-    </style>
+         
+    @media print {
+        body * {
+            visibility: hidden;
+        }
+        #printSection, #printSection * {
+            visibility: visible;
+        }
+        #printSection {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            background-color: #fff;
+        }
+    }
+</style>
+
+    
 </head>
 
 <body>
@@ -165,6 +183,12 @@
                 <option value="Male">Male</option>
                 <option value="Female">Female</option>
             </select>
+            <label for="location">Where do you live?</label>
+            <select id="location">
+                <option value="Any">Any</option>
+                <option value="Rural">Rural</option>
+                <option value="Urban">Urban</option>
+            </select>
 
             <label for="language">Display Language</label>
             <select id="language">
@@ -177,16 +201,25 @@
             <button class="btn" onclick="printResults()"><i class="fa-solid fa-print"></i> Print / Download PDF</button>
         </div>
 
-        <div class="results" id="results"></div>
-    </div>
+        <div class="results" id="printSection">
+             <div id="results"></div>
+        </div>
+
+
 
     <footer>
-        <p>© 2025 Rural Welfare | Designed for Easy Access</p>
+        <p>©  Rural Welfare | Designed for Easy Access</p>
     </footer>
 
     <script src="script.js"></script>
 </body>
 
 </html>
+
+     
+         
+           
+          
+           
 
 
